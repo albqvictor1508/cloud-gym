@@ -1,9 +1,11 @@
 public class Student extends Person {
+  private int id;
   private int paymentDay;
 
-  public Student(String name, int age, int paymentDay) {
+  public Student(String name, int age, int paymentDay, int id) {
     super(name, age);
     this.paymentDay = paymentDay;
+    this.id = id;
   }
 
   public int getPaymentDay() {
@@ -14,8 +16,16 @@ public class Student extends Person {
     this.paymentDay = paymentDay;
   }
 
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
   @Override
   public void showInfo() {
-    System.out.println("Student: " + getName() + ", age: " + getAge() + ", Payment Day: " + getPaymentDay());
+    System.out.println("id: " + getId() + ", Student: " + getName() + ", age: " + getAge() + ", Payment Day: " + getPaymentDay());
   }
+
 }
