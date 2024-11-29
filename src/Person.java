@@ -1,10 +1,16 @@
 public abstract class Person {
   private String name;
   private int age;
+  private final int id;
 
-  public Person(String name, int age) {
+  public Person(String name, int age, int id) {
     this.name = name;
     this.age = age;
+    this.id = id;
+  }
+
+  public int getId() {
+    return id;
   }
 
   public String getName() {
@@ -24,6 +30,4 @@ public abstract class Person {
   }
 
   public abstract void showInfo();
-
-  public abstract void displayInformation();
 }

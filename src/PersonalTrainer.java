@@ -1,21 +1,11 @@
 import java.util.ArrayList;
 
 public class PersonalTrainer extends Person {
-  private String specialty;
   private final ArrayList<Student> students;
 
-  public PersonalTrainer(String name, int age, String specialty) {
-    super(name, age);
-    this.specialty = specialty;
+  public PersonalTrainer(String name, int age, int id) {
+    super(name, age, id);
     this.students = new ArrayList<>();
-  }
-
-  public String getSpecialty() {
-    return specialty;
-  }
-
-  public void setSpecialty(String specialty) {
-    this.specialty = specialty;
   }
 
   public ArrayList<Student> getStudents() {
@@ -45,7 +35,7 @@ public class PersonalTrainer extends Person {
       System.out.println("No students associated.");
     } else {
       for (Student student : students) {
-        student.displayInformation();
+        student.showInfo();
       }
     }
   }

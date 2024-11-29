@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class CloudGym implements Register<Person> {
   private ArrayList<Person> people;
 
-  public Academy() {
+  public CloudGym() {
     this.people = new ArrayList<>();
   }
 
@@ -24,7 +24,7 @@ public class CloudGym implements Register<Person> {
   }
 
   @Override
-  public void remove(int index) {
+  public void delete(int index) {
     if (index < 0 || index >= people.size()) {
       System.out.println("Invalid index.");
       return;
@@ -34,7 +34,7 @@ public class CloudGym implements Register<Person> {
   }
 
   @Override
-  public Person get(int index) {
+  public Person consult(int index) {
     if (index < 0 || index >= people.size()) {
       System.out.println("Invalid index.");
       return null;
@@ -50,16 +50,37 @@ public class CloudGym implements Register<Person> {
     }
     for (int i = 0; i < people.size(); i++) {
       System.out.print(i + " - ");
-      people.get(i).displayInfo();
+      people.get(i).showInfo();
     }
   }
 
   public void listTrainers() {
     for (Person person : people) {
-      if (!(person instanceof Trainer)) {
-        continue;
+      if (person instanceof PersonalTrainer) {
+        person.showInfo();
       }
-      person.displayInfo();
     }
   }
+
+  public boolean removeById(int id) {
+    for (int i = 0; i < people.size(); i++) {
+      if (people.get(i).getId() == id) {
+        Person removed = people.remove(i);
+        System.out.println(removed.getName() + " (ID: " + removed.getId() + ") was successfully removed!");
+        return true;
+      }
+    }
+    System.out.println("Person with ID " + id + " not found.");
+    return false;
+  }
+
+  public Person findById(int id) {
+    for (Person person : people) {
+      if (person.getId() == id) {
+        return person;
+      }
+    }
+    return null;
+  }
+
 }

@@ -21,7 +21,7 @@ public class Training {
     return student;
   }
 
-  public void displayInformation() {
+  public void showInfo() {
     System.out.println("Training: " + name + " | Type: " + type + " | Student: " + student.getName());
   }
 }
