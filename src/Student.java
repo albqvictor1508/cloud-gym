@@ -17,7 +17,7 @@ public class Student extends Person {
   }
 
   public int getId() {
-    return id;
+    return 0;
   }
 
   public void setId(int id) {
@@ -28,4 +28,6 @@ public class Student extends Person {
     System.out.println("id: " + getId() + ", Student: " + getName() + ", age: " + getAge() + ", Payment Day: " + getPaymentDay());
   }
 
+  public void displayInformation() {
+  }
 }

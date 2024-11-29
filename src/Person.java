@@ -24,4 +24,6 @@ public abstract class Person {
   }
 
   public abstract void showInfo();
+
+  public abstract void displayInformation();
 }
