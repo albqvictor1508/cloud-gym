@@ -1,4 +1,4 @@
-# Sistema de Gerenciamento de Academia
+# Cloud Gym
 
 Este é um sistema simples de gerenciamento de academia desenvolvido em Java, sem o uso de frameworks, utilizando conceitos básicos de Programação Orientada a Objetos (POO). Ele permite realizar operações de **CRUD** para alunos, treinadores e treinos, além de associar alunos a treinadores e gerenciar treinos atribuídos.
 
